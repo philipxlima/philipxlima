@@ -1,4 +1,4 @@
-## Oiii eu sou o Philip Xavier de Lima, criador de conteúdo de programação e tecnologia!
+## Oiii eu sou o Philip Xavier de Lima, sou um profissional completo com habilidades em programação e design gráfico. Crio soluções incríveis e inovadoras que superam as expectativas dos clientes.
 
 Pessoal que veio atrás do **Github Stats:** a API provavelmente saiu do ar nesse período,
 mas você pode adicionar a sua própria, seguindo esse [tutorial](https://github.com/anuraghazra/github-readme-stats/blob/master/readme.md#deploy-on-your-own-vercel-instance)
