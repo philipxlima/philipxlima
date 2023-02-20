@@ -35,6 +35,6 @@
 <a href="https://github.com/philipxlima/Bateia">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=Bateia&theme=chartreuse-dark" />
 </a>
-<a href="https://github.com/philipxlima/philipxlima">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=philipxlima&theme=chartreuse-dark" />
+<a href="https://github.com/philipxlima/ticket-bot">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=ticket-bot&theme=chartreuse-dark" />
 </a>
