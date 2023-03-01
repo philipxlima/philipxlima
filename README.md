@@ -14,10 +14,7 @@
   <img align="center" alt="Phil-nodejs" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
   <img align="right" alt="Phil-pic" height="150" style="border-radius:50px;" src="https://media.discordapp.net/attachments/999613332837388358/1076975707827208323/Kirito_Kirigaara_long_haired_man_on_the_side_drawn_in_anime_wit_a101fa33-4bcb-48b2-bd7d-76780b91a305.png?width=671&height=671">
 </div>
-  
-  ##
-  
- 
+  ## 
 <div> 
   <a href="https://www.youtube.com/channel/UCrrXLHxIDKDiJjj992SZEDw" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
   <a href="https://instagram.com/philipxlima" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
