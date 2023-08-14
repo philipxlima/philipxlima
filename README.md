@@ -27,7 +27,7 @@
   
 </div>
 
-![Snake animation](https://github.com/philipxlima/philipxlima/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://github.com/philipxlima/philipxlima/blob/output/github-contribution-grid-snake-dark.svg)
 
 #### Top Repositories
 
