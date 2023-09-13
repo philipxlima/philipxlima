@@ -40,7 +40,7 @@
     alt="github contribution grid snake animation"
     src="https://raw.githubusercontent.com/philipxlima/philipxlima/output/github-contribution-grid-snake.svg"
   />
-</picture
+</picture>
 
 #### Top Repositories
 
