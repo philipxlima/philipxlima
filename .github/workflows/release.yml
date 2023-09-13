@@ -38,12 +38,12 @@ jobs:
         with:
           push: true
           tags: |
-            philipxlima/snk:${{ github.sha }}
-            philipxlima/snk:${{ github.event.inputs.version }}
+            philipxlima/philipxlima:${{ github.sha }}
+            philipxlima/philipxlima:${{ github.event.inputs.version }}
 
       - name: update action.yml to point to the newly created docker image
         run: |
-          sed -i "s/image: .*/image: docker:\/\/philipxlima\/snk@${{ steps.docker-build.outputs.digest }}/" action.yml
+          sed -i "s/image: .*/image: docker:\/\/philipxlima\/philipxlima@${{ steps.docker-build.outputs.digest }}/" action.yml
 
       - uses: actions/setup-node@v3
         with:
