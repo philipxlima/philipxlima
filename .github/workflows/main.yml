@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           cache: yarn
-          node-version: 16
+          node-version: 20
       - run: yarn install --frozen-lockfile
 
       - run: npm run type
@@ -23,7 +23,7 @@ jobs:
   test-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: update action.yml to use image from local Dockerfile
         run: |
@@ -58,11 +58,11 @@ jobs:
   test-action-svg-only:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           cache: yarn
-          node-version: 16
+          node-version: 20
       - run: yarn install --frozen-lockfile
 
       - name: build svg-only action
@@ -98,16 +98,16 @@ jobs:
   deploy-ghpages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           cache: yarn
-          node-version: 16
+          node-version: 20
       - run: yarn install --frozen-lockfile
 
       - run: npm run build:demo
         env:
-          GITHUB_USER_CONTRIBUTION_API_ENDPOINT: https://snk-one.vercel.app/api/github-user-contribution/
+          GITHUB_USER_CONTRIBUTION_API_ENDPOINT: https://philipxlima-one.vercel.app/api/github-user-contribution/
 
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         if: success() && github.ref == 'refs/heads/main'
