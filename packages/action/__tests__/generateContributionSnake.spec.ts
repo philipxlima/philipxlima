@@ -32,7 +32,7 @@ it(
 
     const outputs = parseOutputsOption(entries);
 
-    const results = await generateContributionSnake("platane", outputs, {
+    const results = await generateContributionSnake("philipxlima", outputs, {
       githubToken: process.env.GITHUB_TOKEN!,
     });
 

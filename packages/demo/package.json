@@ -1,13 +1,13 @@
 {
-  "name": "@snk/demo",
+  "name": "@philipxlima/demo",
   "version": "1.0.0",
   "dependencies": {
-    "@snk/action": "1.0.0",
-    "@snk/draw": "1.0.0",
-    "@snk/github-user-contribution": "1.0.0",
-    "@snk/solver": "1.0.0",
-    "@snk/svg-creator": "1.0.0",
-    "@snk/types": "1.0.0"
+    "@philipxlima/action": "1.0.0",
+    "@philipxlima/draw": "1.0.0",
+    "@philipxlima/github-user-contribution": "1.0.0",
+    "@philipxlima/solver": "1.0.0",
+    "@philipxlima/svg-creator": "1.0.0",
+    "@philipxlima/types": "1.0.0"
   },
   "devDependencies": {
     "dotenv": "16.3.1",

@@ -1,4 +1,4 @@
-# @snk/svg-creator
+# @philipxlima/svg-creator
 
 Generate a svg file from the grid and snake path.
 

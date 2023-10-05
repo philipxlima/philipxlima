@@ -281,7 +281,7 @@ const createSvg = (grid, cells, chain, drawOptions, animationOptions) => {
             xmlns: "http://www.w3.org/2000/svg",
         }).replace("/>", ">"),
         "<desc>",
-        "Generated with https://github.com/Platane/snk",
+        "Generated with https://github.com/philipxlima/philipxlima",
         "</desc>",
         "<style>",
         optimizeCss(style),

@@ -1,9 +1,9 @@
 {
-  "name": "@snk/gif-creator",
+  "name": "@philipxlima/gif-creator",
   "version": "1.0.0",
   "dependencies": {
-    "@snk/draw": "1.0.0",
-    "@snk/solver": "1.0.0",
+    "@philipxlima/draw": "1.0.0",
+    "@philipxlima/solver": "1.0.0",
     "canvas": "2.11.2",
     "gif-encoder-2": "1.0.5",
     "gifsicle": "5.3.0",

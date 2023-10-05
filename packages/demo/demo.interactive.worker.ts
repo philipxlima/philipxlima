@@ -1,7 +1,7 @@
-import { getBestRoute } from "@snk/solver/getBestRoute";
-import { getPathToPose } from "@snk/solver/getPathToPose";
-import { snake4 as snake } from "@snk/types/__fixtures__/snake";
-import type { Grid } from "@snk/types/grid";
+import { getBestRoute } from "@philipxlima/solver/getBestRoute";
+import { getPathToPose } from "@philipxlima/solver/getPathToPose";
+import { snake4 as snake } from "@philipxlima/types/__fixtures__/snake";
+import type { Grid } from "@philipxlima/types/grid";
 import { createRpcServer } from "./worker-utils";
 
 const getChain = (grid: Grid) => {

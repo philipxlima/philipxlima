@@ -1,4 +1,4 @@
-import { createSnakeFromCells } from "@snk/types/snake";
+import { createSnakeFromCells } from "@philipxlima/types/snake";
 import { getPathToPose } from "../getPathToPose";
 
 it("should fing path to pose", () => {

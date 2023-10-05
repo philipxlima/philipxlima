@@ -1,13 +1,13 @@
 {
-  "name": "@snk/action",
+  "name": "@philipxlima/action",
   "version": "1.0.0",
   "dependencies": {
     "@actions/core": "1.10.1",
-    "@snk/gif-creator": "1.0.0",
-    "@snk/github-user-contribution": "1.0.0",
-    "@snk/solver": "1.0.0",
-    "@snk/svg-creator": "1.0.0",
-    "@snk/types": "1.0.0"
+    "@philipxlima/gif-creator": "1.0.0",
+    "@philipxlima/github-user-contribution": "1.0.0",
+    "@philipxlima/solver": "1.0.0",
+    "@philipxlima/svg-creator": "1.0.0",
+    "@philipxlima/types": "1.0.0"
   },
   "devDependencies": {
     "@vercel/ncc": "0.38.0",
@@ -15,6 +15,6 @@
   },
   "scripts": {
     "build": "ncc build --external canvas --external gifsicle --out dist ./index.ts",
-    "run:build": "INPUT_GITHUB_USER_NAME=platane INPUT_OUTPUTS='dist/out.svg' node dist/index.js"
+    "run:build": "INPUT_GITHUB_USER_NAME=philipxlima INPUT_OUTPUTS='dist/out.svg' node dist/index.js"
   }
 }

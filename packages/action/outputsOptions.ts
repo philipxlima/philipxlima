@@ -1,5 +1,5 @@
-import type { AnimationOptions } from "@snk/gif-creator";
-import type { DrawOptions as DrawOptions } from "@snk/svg-creator";
+import type { AnimationOptions } from "@philipxlima/gif-creator";
+import type { DrawOptions as DrawOptions } from "@philipxlima/svg-creator";
 import { palettes } from "./palettes";
 
 export const parseOutputsOption = (lines: string[]) => lines.map(parseEntry);

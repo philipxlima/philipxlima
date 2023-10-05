@@ -5,9 +5,9 @@ import {
   isInside,
   setColor,
   setColorEmpty,
-} from "@snk/types/grid";
-import { around4 } from "@snk/types/point";
-import type { Color, Grid } from "@snk/types/grid";
+} from "@philipxlima/types/grid";
+import { around4 } from "@philipxlima/types/point";
+import type { Color, Grid } from "@philipxlima/types/grid";
 
 export type Outside = Grid & { __outside: true };
 

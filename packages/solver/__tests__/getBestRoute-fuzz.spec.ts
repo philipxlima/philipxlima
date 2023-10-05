@@ -1,13 +1,13 @@
 import { getBestRoute } from "../getBestRoute";
-import { snake3, snake4 } from "@snk/types/__fixtures__/snake";
+import { snake3, snake4 } from "@philipxlima/types/__fixtures__/snake";
 import {
   getHeadX,
   getHeadY,
   getSnakeLength,
   Snake,
   snakeWillSelfCollide,
-} from "@snk/types/snake";
-import { createFromSeed } from "@snk/types/__fixtures__/createFromSeed";
+} from "@philipxlima/types/snake";
+import { createFromSeed } from "@philipxlima/types/__fixtures__/createFromSeed";
 
 const n = 1000;
 

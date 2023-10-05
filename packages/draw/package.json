@@ -1,7 +1,7 @@
 {
-  "name": "@snk/draw",
+  "name": "@philipxlima/draw",
   "version": "1.0.0",
   "dependencies": {
-    "@snk/solver": "1.0.0"
+    "@philipxlima/solver": "1.0.0"
   }
 }

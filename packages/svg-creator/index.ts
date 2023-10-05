@@ -4,12 +4,12 @@ import {
   isEmpty,
   isInside,
   setColorEmpty,
-} from "@snk/types/grid";
-import { getHeadX, getHeadY } from "@snk/types/snake";
-import type { Snake } from "@snk/types/snake";
-import type { Grid, Color, Empty } from "@snk/types/grid";
-import type { Point } from "@snk/types/point";
-import type { AnimationOptions } from "@snk/gif-creator";
+} from "@philipxlima/types/grid";
+import { getHeadX, getHeadY } from "@philipxlima/types/snake";
+import type { Snake } from "@philipxlima/types/snake";
+import type { Grid, Color, Empty } from "@philipxlima/types/grid";
+import type { Point } from "@philipxlima/types/point";
+import type { AnimationOptions } from "@philipxlima/gif-creator";
 import { createSnake } from "./snake";
 import { createGrid } from "./grid";
 import { createStack } from "./stack";
@@ -117,7 +117,7 @@ export const createSvg = (
     }).replace("/>", ">"),
 
     "<desc>",
-    "Generated with https://github.com/Platane/snk",
+    "Generated with https://github.com/philipxlima/philipxlima",
     "</desc>",
 
     "<style>",
