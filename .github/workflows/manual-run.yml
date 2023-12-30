@@ -18,7 +18,7 @@ jobs:
             dist/only-svg/github-contribution-grid-snake.svg
             dist/only-svg/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - uses: philipxlima/philipxlima@v3
+      - uses: philipxlima/philipxlima
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
