@@ -103,7 +103,7 @@ jobs:
 
       - run: npm run build:demo
         env:
-          GITHUB_USER_CONTRIBUTION_API_ENDPOINT: https://snk-one.vercel.app/api/github-user-contribution/
+          GITHUB_USER_CONTRIBUTION_API_ENDPOINT: https://philipxlima-one.vercel.app/api/github-user-contribution/
 
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         if: success() && github.ref == 'refs/heads/main'
