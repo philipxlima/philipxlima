@@ -1,6 +1,6 @@
 name: "generate-snake-game-from-github-contribution-grid"
 description: "Generates a snake game from a github user contributions grid. Output the animation as svg"
-author: "philipxlima"
+author: "platane"
 
 runs:
   using: node20
@@ -10,6 +10,10 @@ inputs:
   github_user_name:
     description: "github user name"
     required: true
+  github_token:
+    description: "github token used to fetch the contribution calendar. Default to the action token if empty."
+    required: false
+    default: ${{ github.token }}
   outputs:
     required: false
     default: null
