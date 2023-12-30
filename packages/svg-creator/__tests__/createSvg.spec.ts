@@ -1,10 +1,10 @@
 import * as fs from "fs";
 import * as path from "path";
 import { createSvg, DrawOptions as DrawOptions } from "..";
-import * as grids from "@philipxlima/types/__fixtures__/grid";
-import { snake3 as snake } from "@philipxlima/types/__fixtures__/snake";
-import { getBestRoute } from "@philipxlima/solver/getBestRoute";
-import { AnimationOptions } from "@philipxlima/gif-creator";
+import * as grids from "@snk/types/__fixtures__/grid";
+import { snake3 as snake } from "@snk/types/__fixtures__/snake";
+import { getBestRoute } from "@snk/solver/getBestRoute";
+import { AnimationOptions } from "@snk/gif-creator";
 
 const drawOptions: DrawOptions = {
   sizeDotBorderRadius: 2,

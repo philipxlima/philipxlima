@@ -1,10 +1,10 @@
 import "./menu";
-import { getBestRoute } from "@philipxlima/solver/getBestRoute";
-import { createSvg } from "@philipxlima/svg-creator";
+import { getBestRoute } from "@snk/solver/getBestRoute";
+import { createSvg } from "@snk/svg-creator";
 import { grid, snake } from "./sample";
 import { drawOptions } from "./canvas";
-import { getPathToPose } from "@philipxlima/solver/getPathToPose";
-import type { AnimationOptions } from "@philipxlima/gif-creator";
+import { getPathToPose } from "@snk/solver/getPathToPose";
+import type { AnimationOptions } from "@snk/gif-creator";
 
 const chain = getBestRoute(grid, snake);
 chain.push(...getPathToPose(chain.slice(-1)[0], snake)!);

@@ -4,7 +4,7 @@ import {
   isInside,
   isInsideLarge,
   setColorEmpty,
-} from "@philipxlima/types/grid";
+} from "@snk/types/grid";
 import {
   getHeadX,
   getHeadY,
@@ -12,13 +12,13 @@ import {
   nextSnake,
   snakeEquals,
   snakeWillSelfCollide,
-} from "@philipxlima/types/snake";
-import { around4, Point } from "@philipxlima/types/point";
+} from "@snk/types/snake";
+import { around4, Point } from "@snk/types/point";
 import { getBestTunnel } from "./getBestTunnel";
 import { fillOutside } from "./outside";
 import type { Outside } from "./outside";
-import type { Snake } from "@philipxlima/types/snake";
-import type { Color, Empty, Grid } from "@philipxlima/types/grid";
+import type { Snake } from "@snk/types/snake";
+import type { Color, Empty, Grid } from "@snk/types/grid";
 
 export const clearCleanColoredLayer = (
   grid: Grid,

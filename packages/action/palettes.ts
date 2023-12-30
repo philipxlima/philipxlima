@@ -1,4 +1,4 @@
-import { DrawOptions as DrawOptions } from "@philipxlima/svg-creator";
+import { DrawOptions as DrawOptions } from "@snk/svg-creator";
 
 export const basePalettes: Record<
   string,

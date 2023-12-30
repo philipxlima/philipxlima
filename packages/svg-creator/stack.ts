@@ -1,4 +1,4 @@
-import type { Color, Empty } from "@philipxlima/types/grid";
+import type { Color, Empty } from "@snk/types/grid";
 import { createAnimation } from "./css-utils";
 import { h } from "./xml-utils";
 

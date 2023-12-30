@@ -1,8 +1,8 @@
 import "./menu";
 import { createCanvas } from "./canvas";
-import { createSnakeFromCells, snakeToCells } from "@philipxlima/types/snake";
+import { createSnakeFromCells, snakeToCells } from "@snk/types/snake";
 import { grid, snake } from "./sample";
-import { getPathToPose } from "@philipxlima/solver/getPathToPose";
+import { getPathToPose } from "@snk/solver/getPathToPose";
 
 const { canvas, ctx, draw, highlightCell } = createCanvas(grid);
 canvas.style.pointerEvents = "auto";

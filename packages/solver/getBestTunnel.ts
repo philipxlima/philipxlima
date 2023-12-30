@@ -1,5 +1,5 @@
-import { copyGrid, getColor, isInside, setColorEmpty } from "@philipxlima/types/grid";
-import { around4 } from "@philipxlima/types/point";
+import { copyGrid, getColor, isInside, setColorEmpty } from "@snk/types/grid";
+import { around4 } from "@snk/types/point";
 import { sortPush } from "./utils/sortPush";
 import {
   createSnakeFromCells,
@@ -8,13 +8,13 @@ import {
   nextSnake,
   snakeEquals,
   snakeWillSelfCollide,
-} from "@philipxlima/types/snake";
+} from "@snk/types/snake";
 import { isOutside } from "./outside";
 import { trimTunnelEnd, trimTunnelStart } from "./tunnel";
 import type { Outside } from "./outside";
-import type { Snake } from "@philipxlima/types/snake";
-import type { Empty, Color, Grid } from "@philipxlima/types/grid";
-import type { Point } from "@philipxlima/types/point";
+import type { Snake } from "@snk/types/snake";
+import type { Empty, Color, Grid } from "@snk/types/grid";
+import type { Point } from "@snk/types/point";
 
 const getColorSafe = (grid: Grid, x: number, y: number) =>
   isInside(grid, x, y) ? getColor(grid, x, y) : (0 as Empty);

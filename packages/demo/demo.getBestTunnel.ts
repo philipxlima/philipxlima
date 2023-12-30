@@ -1,12 +1,12 @@
 import "./menu";
 import { createCanvas } from "./canvas";
-import { getSnakeLength } from "@philipxlima/types/snake";
+import { getSnakeLength } from "@snk/types/snake";
 import { grid, snake } from "./sample";
-import { getColor } from "@philipxlima/types/grid";
-import { getBestTunnel } from "@philipxlima/solver/getBestTunnel";
-import { createOutside } from "@philipxlima/solver/outside";
-import type { Color } from "@philipxlima/types/grid";
-import type { Point } from "@philipxlima/types/point";
+import { getColor } from "@snk/types/grid";
+import { getBestTunnel } from "@snk/solver/getBestTunnel";
+import { createOutside } from "@snk/solver/outside";
+import type { Color } from "@snk/types/grid";
+import type { Point } from "@snk/types/point";
 
 const { canvas, ctx, draw, highlightCell } = createCanvas(grid);
 document.body.appendChild(canvas);

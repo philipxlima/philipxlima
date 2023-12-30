@@ -2,15 +2,15 @@ import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
 import { createCanvas } from "canvas";
-import { Grid, copyGrid, Color } from "@philipxlima/types/grid";
-import { Snake } from "@philipxlima/types/snake";
+import { Grid, copyGrid, Color } from "@snk/types/grid";
+import { Snake } from "@snk/types/snake";
 import {
   Options as DrawOptions,
   drawLerpWorld,
   getCanvasWorldSize,
-} from "@philipxlima/draw/drawWorld";
-import type { Point } from "@philipxlima/types/point";
-import { step } from "@philipxlima/solver/step";
+} from "@snk/draw/drawWorld";
+import type { Point } from "@snk/types/point";
+import { step } from "@snk/solver/step";
 import tmp from "tmp";
 import gifsicle from "gifsicle";
 // @ts-ignore

@@ -1,7 +1,7 @@
-import * as grids from "@philipxlima/types/__fixtures__/grid";
-import * as snakes from "@philipxlima/types/__fixtures__/snake";
-import type { Snake } from "@philipxlima/types/snake";
-import type { Grid } from "@philipxlima/types/grid";
+import * as grids from "@snk/types/__fixtures__/grid";
+import * as snakes from "@snk/types/__fixtures__/snake";
+import type { Snake } from "@snk/types/snake";
+import type { Grid } from "@snk/types/grid";
 
 const sp = new URLSearchParams(window.location.search);
 

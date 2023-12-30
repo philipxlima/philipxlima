@@ -3,16 +3,11 @@ import { config } from "dotenv";
 config({ path: __dirname + "/../../../.env" });
 
 describe("getGithubUserContribution", () => {
-  const promise = getGithubUserContribution("philipxlima", {
+  const promise = getGithubUserContribution("platane", {
     githubToken: process.env.GITHUB_TOKEN!,
   });
 
   it("should resolve", async () => {
-    console.log(
-      "process.env.GITHUB_TOKEN",
-      process.env.GITHUB_TOKEN?.replace(/\d/g, "x")
-    );
-
     await promise;
   });
 

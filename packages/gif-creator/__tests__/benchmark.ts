@@ -1,11 +1,11 @@
 import * as fs from "fs";
 import { performance } from "perf_hooks";
-import { createSnakeFromCells } from "@philipxlima/types/snake";
-import { realistic as grid } from "@philipxlima/types/__fixtures__/grid";
+import { createSnakeFromCells } from "@snk/types/snake";
+import { realistic as grid } from "@snk/types/__fixtures__/grid";
 import { AnimationOptions, createGif } from "..";
-import { getBestRoute } from "@philipxlima/solver/getBestRoute";
-import { getPathToPose } from "@philipxlima/solver/getPathToPose";
-import type { Options as DrawOptions } from "@philipxlima/draw/drawWorld";
+import { getBestRoute } from "@snk/solver/getBestRoute";
+import { getPathToPose } from "@snk/solver/getPathToPose";
+import type { Options as DrawOptions } from "@snk/draw/drawWorld";
 
 let snake = createSnakeFromCells(
   Array.from({ length: 4 }, (_, i) => ({ x: i, y: -1 }))

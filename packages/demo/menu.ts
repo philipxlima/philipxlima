@@ -1,6 +1,6 @@
 import { GUI } from "dat.gui";
-import * as grids from "@philipxlima/types/__fixtures__/grid";
-import * as snakes from "@philipxlima/types/__fixtures__/snake";
+import * as grids from "@snk/types/__fixtures__/grid";
+import * as snakes from "@snk/types/__fixtures__/snake";
 import { grid, snake } from "./sample";
 
 const demos: string[] = require("./demo.json");

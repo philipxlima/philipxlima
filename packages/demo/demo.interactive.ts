@@ -1,20 +1,20 @@
-import { Color, copyGrid, Grid } from "@philipxlima/types/grid";
-import { step } from "@philipxlima/solver/step";
+import { Color, copyGrid, Grid } from "@snk/types/grid";
+import { step } from "@snk/solver/step";
 import { isStableAndBound, stepSpring } from "./springUtils";
-import type { Res } from "@philipxlima/github-user-contribution";
-import type { Snake } from "@philipxlima/types/snake";
-import type { Point } from "@philipxlima/types/point";
+import type { Res } from "@snk/github-user-contribution";
+import type { Snake } from "@snk/types/snake";
+import type { Point } from "@snk/types/point";
 import {
   drawLerpWorld,
   getCanvasWorldSize,
   Options as DrawOptions,
-} from "@philipxlima/draw/drawWorld";
-import { userContributionToGrid } from "@philipxlima/action/userContributionToGrid";
-import { createSvg } from "@philipxlima/svg-creator";
+} from "@snk/draw/drawWorld";
+import { userContributionToGrid } from "@snk/action/userContributionToGrid";
+import { createSvg } from "@snk/svg-creator";
 import { createRpcClient } from "./worker-utils";
 import type { API as WorkerAPI } from "./demo.interactive.worker";
-import { AnimationOptions } from "@philipxlima/gif-creator";
-import { basePalettes } from "@philipxlima/action/palettes";
+import { AnimationOptions } from "@snk/gif-creator";
+import { basePalettes } from "@snk/action/palettes";
 
 const createForm = ({
   onSubmit,

@@ -1,11 +1,11 @@
-# @philipxlima/github-user-contribution
+# @snk/github-user-contribution
 
 Get the github user contribution graph
 
 ## Usage
 
 ```js
-const { cells, colorScheme } = await getGithubUserContribution("philipxlima");
+const { cells, colorScheme } = await getGithubUserContribution("platane");
 
 // colorScheme = [
 //    "#ebedf0",

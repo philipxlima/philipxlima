@@ -1,9 +1,9 @@
-import { copyGrid } from "@philipxlima/types/grid";
+import { copyGrid } from "@snk/types/grid";
 import { createOutside } from "./outside";
 import { clearResidualColoredLayer } from "./clearResidualColoredLayer";
 import { clearCleanColoredLayer } from "./clearCleanColoredLayer";
-import type { Color, Grid } from "@philipxlima/types/grid";
-import type { Snake } from "@philipxlima/types/snake";
+import type { Color, Grid } from "@snk/types/grid";
+import type { Snake } from "@snk/types/snake";
 
 export const getBestRoute = (grid0: Grid, snake0: Snake) => {
   const grid = copyGrid(grid0);

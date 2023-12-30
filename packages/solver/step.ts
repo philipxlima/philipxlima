@@ -5,8 +5,8 @@ import {
   isEmpty,
   isInside,
   setColorEmpty,
-} from "@philipxlima/types/grid";
-import { getHeadX, getHeadY, Snake } from "@philipxlima/types/snake";
+} from "@snk/types/grid";
+import { getHeadX, getHeadY, Snake } from "@snk/types/snake";
 
 export const step = (grid: Grid, stack: Color[], snake: Snake) => {
   const x = getHeadX(snake);

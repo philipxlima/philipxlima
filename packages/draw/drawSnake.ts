@@ -1,6 +1,6 @@
 import { pathRoundedRect } from "./pathRoundedRect";
-import { snakeToCells } from "@philipxlima/types/snake";
-import type { Snake } from "@philipxlima/types/snake";
+import { snakeToCells } from "@snk/types/snake";
+import type { Snake } from "@snk/types/snake";
 
 type Options = {
   colorSnake: string;
