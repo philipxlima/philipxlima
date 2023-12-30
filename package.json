@@ -1,9 +1,9 @@
 {
-  "name": "philipxlima",
+  "name": "snk",
   "description": "Generates a snake game from a github user contributions grid",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "private": true,
-  "repository": "github:philipxlima/philipxlima",
+  "repository": "github:platane/snk",
   "devDependencies": {
     "@sucrase/jest-plugin": "3.0.0",
     "@types/jest": "29.5.5",
