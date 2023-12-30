@@ -27,8 +27,8 @@ __webpack_require__.d(__webpack_exports__, {
  * @param options
  *
  * @example
- *  getGithubUserContribution("platane", { from: "2019-01-01", to: "2019-12-31" })
- *  getGithubUserContribution("platane", { year: 2019 })
+ *  getGithubUserContribution("philipxlima", { from: "2019-01-01", to: "2019-12-31" })
+ *  getGithubUserContribution("philipxlima", { year: 2019 })
  *
  */
 const getGithubUserContribution = async (userName, o) => {

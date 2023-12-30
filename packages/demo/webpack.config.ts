@@ -1,7 +1,7 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
-import { getGithubUserContribution } from "@snk/github-user-contribution";
+import { getGithubUserContribution } from "@philipxlima/github-user-contribution";
 import { config } from "dotenv";
 import type { Configuration as WebpackConfiguration } from "webpack";
 import type { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
@@ -54,13 +54,13 @@ const webpackConfiguration: WebpackConfiguration = {
     ...demos.map(
       (demo) =>
         new HtmlWebpackPlugin({
-          title: "snk - " + demo,
+          title: "philipxlima - " + demo,
           filename: `${demo}.html`,
           chunks: [demo],
         })
     ),
     new HtmlWebpackPlugin({
-      title: "snk - " + demos[0],
+      title: "philipxlima - " + demos[0],
       filename: `index.html`,
       chunks: [demos[0]],
     }),

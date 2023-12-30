@@ -1,6 +1,6 @@
-import { createEmptyGrid } from "@snk/types/grid";
-import { getHeadX, getHeadY } from "@snk/types/snake";
-import { snake3 } from "@snk/types/__fixtures__/snake";
+import { createEmptyGrid } from "@philipxlima/types/grid";
+import { getHeadX, getHeadY } from "@philipxlima/types/snake";
+import { snake3 } from "@philipxlima/types/__fixtures__/snake";
 import { getPathTo } from "../getPathTo";
 
 it("should find it's way in vaccum", () => {

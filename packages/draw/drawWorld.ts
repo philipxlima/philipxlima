@@ -1,8 +1,8 @@
 import { drawGrid } from "./drawGrid";
 import { drawSnake, drawSnakeLerp } from "./drawSnake";
-import type { Grid, Color } from "@snk/types/grid";
-import type { Snake } from "@snk/types/snake";
-import type { Point } from "@snk/types/point";
+import type { Grid, Color } from "@philipxlima/types/grid";
+import type { Snake } from "@philipxlima/types/snake";
+import type { Point } from "@philipxlima/types/point";
 
 export type Options = {
   colorDots: Record<Color, string>;

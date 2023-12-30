@@ -1,4 +1,4 @@
-# @snk/gif-creator
+# @philipxlima/gif-creator
 
 Generate a gif file from the grid and snake path.
 

@@ -1,11 +1,11 @@
 import * as fs from "fs";
 import * as path from "path";
 import { AnimationOptions, createGif } from "..";
-import * as grids from "@snk/types/__fixtures__/grid";
-import { snake3 as snake } from "@snk/types/__fixtures__/snake";
-import { createSnakeFromCells, nextSnake } from "@snk/types/snake";
-import { getBestRoute } from "@snk/solver/getBestRoute";
-import type { Options as DrawOptions } from "@snk/draw/drawWorld";
+import * as grids from "@philipxlima/types/__fixtures__/grid";
+import { snake3 as snake } from "@philipxlima/types/__fixtures__/snake";
+import { createSnakeFromCells, nextSnake } from "@philipxlima/types/snake";
+import { getBestRoute } from "@philipxlima/solver/getBestRoute";
+import type { Options as DrawOptions } from "@philipxlima/draw/drawWorld";
 
 jest.setTimeout(20 * 1000);
 
@@ -55,18 +55,18 @@ for (const key of [
 
 it(`should generate swipper`, async () => {
   const grid = grids.smallFull;
-  let snk = createSnakeFromCells(
+  let philipxlima = createSnakeFromCells(
     Array.from({ length: 6 }, (_, i) => ({ x: i, y: -1 }))
   );
 
-  const chain = [snk];
+  const chain = [philipxlima];
   for (let y = -1; y < grid.height; y++) {
-    snk = nextSnake(snk, 0, 1);
-    chain.push(snk);
+    philipxlima = nextSnake(philipxlima, 0, 1);
+    chain.push(philipxlima);
 
     for (let x = grid.width - 1; x--; ) {
-      snk = nextSnake(snk, (y + 100) % 2 ? 1 : -1, 0);
-      chain.push(snk);
+      philipxlima = nextSnake(philipxlima, (y + 100) % 2 ? 1 : -1, 0);
+      chain.push(philipxlima);
     }
   }
 
