@@ -55,3 +55,10 @@
 </a>
 <a href="https://github.com/philipxlima/ticket-bot">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=ticket-bot&theme=chartreuse-dark" />
+
+
+<div align="center">
+<br><p align="centre"><b>Visitors Count</b></p>  
+<p align="center"><img align="center" src="https://profile-counter.glitch.me/{carolbarbosa101}/count.svg" /></p> 
+<br>
+</div>
