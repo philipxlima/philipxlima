@@ -1,7 +1,7 @@
-import { Color, Grid } from "@snk/types/grid";
-import { drawLerpWorld, drawWorld } from "@snk/draw/drawWorld";
-import { Snake } from "@snk/types/snake";
-import type { DrawOptions as DrawOptions } from "@snk/svg-creator";
+import { Color, Grid } from "@philipxlima/types/grid";
+import { drawLerpWorld, drawWorld } from "@philipxlima/draw/drawWorld";
+import { Snake } from "@philipxlima/types/snake";
+import type { DrawOptions as DrawOptions } from "@philipxlima/svg-creator";
 
 export const drawOptions: DrawOptions = {
   sizeDotBorderRadius: 2,

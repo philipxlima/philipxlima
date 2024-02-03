@@ -1,4 +1,4 @@
-# @snk/action
+# @philipxlima/action
 
 Contains the github action code.
 

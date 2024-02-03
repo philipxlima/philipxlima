@@ -1,6 +1,6 @@
-import { setColor, createEmptyGrid, setColorEmpty } from "@snk/types/grid";
-import type { Cell } from "@snk/github-user-contribution";
-import type { Color } from "@snk/types/grid";
+import { setColor, createEmptyGrid, setColorEmpty } from "@philipxlima/types/grid";
+import type { Cell } from "@philipxlima/github-user-contribution";
+import type { Color } from "@philipxlima/types/grid";
 
 export const userContributionToGrid = (cells: Cell[]) => {
   const width = Math.max(0, ...cells.map((c) => c.x)) + 1;
