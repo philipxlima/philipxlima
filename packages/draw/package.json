@@ -1,7 +1,0 @@
-{
-  "name": "@philipxlima/draw",
-  "version": "1.0.0",
-  "dependencies": {
-    "@philipxlima/solver": "1.0.0"
-  }
-}
