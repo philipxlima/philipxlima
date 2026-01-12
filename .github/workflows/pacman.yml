@@ -1,0 +1,33 @@
+name: Generate Pacman
+
+on:
+  schedule:
+    # Run every 24 hours
+    - cron: "0 0 * * *" 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Generate Pacman
+        run: |
+          node generate_pacman.js ${{ github.repository_owner }}
+
+      - name: Push to Output Branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: .
+          keep_history: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
