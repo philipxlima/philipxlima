@@ -31,7 +31,7 @@
 
 </div>
 
-(https://philipxlima.github.io/philipxlima/pacman.html)
+https://philipxlima.github.io/philipxlima/pacman.html
 
 
 #### Top Repositories
