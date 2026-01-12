@@ -32,7 +32,7 @@
 </div>
 
  
-   ![Pacman](https://raw.githubusercontent.com/philipxlima/philipxlima/main/pacman.svg)
+   ![Pacman](https://raw.githubusercontent.com/philipxlima/philipxlima/output/pacman.svg)
  
 #### Top Repositories
 
