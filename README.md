@@ -31,8 +31,9 @@
 
 </div>
 
-https://philipxlima.github.io/philipxlima/pacman.html
-
+```markdown
+   ![Pacman](https://raw.githubusercontent.com/philipxlima/philipxlima/output/pacman.svg)
+   ```
 
 #### Top Repositories
 
