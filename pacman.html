@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Philip Lima - GitHub Pacman</title>
+    <style>
+        body { background: #0d1117; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .snake-container { padding: 20px; border: 1px solid #30363d; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+    <div class="snake-container">
+        <canvas id="pacman-canvas" width="800" height="150"></canvas>
+    </div>
+    <script>
+        // --- Pacman GitHub Animation (Real Data + Smart Rotation) ---
+        const canvas = document.getElementById('pacman-canvas');
+        const ctx = canvas.getContext('2d');
+        const boxSize = 12; 
+        const gap = 4;
+        const cols = 53; 
+        const rows = 7;
+        const colors = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'];
+        
+        // Dados REAIS (Extraídos do seu perfil)
+        const realGrid = [
+            [0,0,0,0,0,0,4], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,1], [4,1,2,0,0,0,0], [4,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [4,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [0,2,0,0,0,0,0], [4,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], 
+            [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0]
+        ];
+        let grid = [];
+        let targets = [];
+        
+        for (let i = 0; i < cols; i++) {
+            let col = [];
+            for (let j = 0; j < rows; j++) {
+                let level = realGrid[i] ? realGrid[i][j] : 0;
+                let isActive = level > 0;
+                col.push({
+                    x: i * (boxSize + gap),
+                    y: j * (boxSize + gap),
+                    color: colors[level],
+                    active: isActive,
+                    initialActive: isActive,
+                    level: level
+                });
+                if (isActive) targets.push({ x: i, y: j, level: level });
+            }
+            grid.push(col);
+        }
+        let sortedPath = [];
+        let currentPos = {x: 0, y: 3};
+        let levelsTargets = [[], [], [], [], []];
+        targets.forEach(t => levelsTargets[t.level].push(t));
+        
+        for (let l = 1; l <= 4; l++) {
+            let group = levelsTargets[l];
+            while (group.length > 0) {
+                let closestIdx = -1;
+                let minDist = Infinity;
+                for (let i = 0; i < group.length; i++) {
+                    let d = Math.abs(group[i].x - currentPos.x) + Math.abs(group[i].y - currentPos.y);
+                    if (d < minDist) { minDist = d; closestIdx = i; }
+                }
+                let nextTarget = group[closestIdx];
+                sortedPath.push(nextTarget);
+                currentPos = nextTarget;
+                group.splice(closestIdx, 1);
+            }
+        }
+        let path = [...sortedPath];
+        let pacman = {
+            pixelX: -20, pixelY: grid[0][3].y + 6,
+            radius: 6, mouthOpen: 0.2, mouthSpeed: 0.1, dir: 1, angle: 0,
+            speed: 1.5, targetIndex: 0
+        };
+        function update() {
+            if (pacman.targetIndex < path.length) {
+                let target = path[pacman.targetIndex];
+                let targetPixelX = grid[target.x][target.y].x + 6;
+                let targetPixelY = grid[target.x][target.y].y + 6;
+                let dx = targetPixelX - pacman.pixelX;
+                let dy = targetPixelY - pacman.pixelY;
+                
+                if (Math.abs(dx) > pacman.speed) {
+                    pacman.pixelX += Math.sign(dx) * pacman.speed;
+                    pacman.angle = Math.sign(dx) > 0 ? 0 : Math.PI;
+                } else if (Math.abs(dy) > pacman.speed) {
+                    if (Math.abs(dx) > 0) pacman.pixelX = targetPixelX;
+                    pacman.pixelY += Math.sign(dy) * pacman.speed;
+                    pacman.angle = Math.sign(dy) > 0 ? Math.PI/2 : -Math.PI/2;
+                } else {
+                    pacman.pixelX = targetPixelX;
+                    pacman.pixelY = targetPixelY;
+                    if (grid[target.x][target.y].active) grid[target.x][target.y].active = false;
+                    pacman.targetIndex++;
+                }
+            } else {
+                pacman.pixelX += pacman.speed;
+                if (pacman.pixelX > canvas.width + 20) {
+                    pacman.pixelX = -20; pacman.targetIndex = 0;
+                    path.forEach(p => grid[p.x][p.y].active = true);
+                }
+            }
+            
+            // Draw
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i=0; i<cols; i++) for (let j=0; j<rows; j++) {
+                let b = grid[i][j];
+                ctx.fillStyle = b.active ? b.color : (b.initialActive ? '#1b2028' : colors[0]);
+                ctx.fillRect(b.x, b.y, boxSize, boxSize);
+            }
+            
+            ctx.save();
+            ctx.translate(pacman.pixelX, pacman.pixelY);
+            ctx.rotate(pacman.angle);
+            ctx.fillStyle = '#FFD700';
+            pacman.mouthOpen += pacman.mouthSpeed * pacman.dir;
+            if (pacman.mouthOpen > 0.25 || pacman.mouthOpen < 0.05) pacman.dir *= -1;
+            ctx.beginPath();
+            ctx.arc(0, 0, pacman.radius, pacman.mouthOpen * Math.PI, (2 - pacman.mouthOpen) * Math.PI);
+            ctx.lineTo(0, 0);
+            ctx.fill();
+            ctx.restore();
+            
+            requestAnimationFrame(update);
+        }
+        update();
+    </script>
+</body>
+</html>
