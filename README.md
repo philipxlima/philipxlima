@@ -34,7 +34,14 @@
 
  
    ![Pacman](https://raw.githubusercontent.com/philipxlima/philipxlima/output/pacman.svg)
-   
+   ![Pacman](https://philipxlima.github.io/philipxlima/pacman.svg)
+
+   ```markdown
+   ![Pacman](https://philipxlima.github.io/philipxlima/pacman.svg)
+   ```
+ ```markdown
+   ![Pacman](https://raw.githubusercontent.com/philipxlima/philipxlima/output/pacman.svg)
+   ```
  
 #### Top Repositories
 
