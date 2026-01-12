@@ -5,7 +5,7 @@ const boxSize = 10;
 const gap = 4;
 const cols = 53;
 const rows = 7;
-const speed = 100; // pixels per second (approx) - used to calculate duration
+const speed = 200; // pixels per second (approx) - used to calculate duration
 const stepDuration = 0.2; // seconds per step (movement between cells)
 const pauseAtEnd = 3; // seconds to wait before looping
 const colors = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39']; // GitHub palette (Light)
@@ -82,6 +82,7 @@ async function getContributions(username) {
     const username = args[0];
 
     const fetchedGrid = await getContributions(username);
+    console.log("Grid fetched/mocked");
 
     const realGrid = fetchedGrid || [
         [0, 0, 0, 0, 0, 0, 4], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
@@ -146,7 +147,8 @@ async function getContributions(username) {
     // Start at (0, 3) -> pixel coords
     // The path consists of L (line to) commands.
     // Coords: x = col * (size+gap), y = row * (size+gap)
-
+    const width = cols * (boxSize + gap);
+    const height = rows * (boxSize + gap);
     const startPixelX = 0 * (boxSize + gap);
     const startPixelY = 3 * (boxSize + gap);
 
@@ -234,7 +236,7 @@ async function getContributions(username) {
         totalDistance += dist(pathPoints[i - 1], pathPoints[i]);
     }
 
-    const speedPxPerSec = 80;
+    const speedPxPerSec = 50;
     const animDuration = totalDistance / speedPxPerSec;
 
     // Now find when each target is hit
@@ -267,15 +269,15 @@ async function getContributions(username) {
     });
 
 
-    // SVG Components
-    const width = cols * (boxSize + gap) + 20;
-    const height = rows * (boxSize + gap) + 20;
+    // SVG Components using previously defined width/height
+    const svgWidth = width + 20;
+    const svgHeight = height + 20;
 
     // Extend duration slightly for the reset phase
     const loopDuration = animDuration + 1.0;
 
     let svgContent = `
-<svg width="${width}" height="${height}" viewBox="-10 -10 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+<svg width="${svgWidth}" height="${svgHeight}" viewBox="-10 -10 ${svgWidth} ${svgHeight}" xmlns="http://www.w3.org/2000/svg">
 <rect x="-10" y="-10" width="${width}" height="${height}" fill="#0d1117" />
 <g transform="translate(0,0)">
 `;
