@@ -15,8 +15,8 @@
   <img align="center" alt="Phil-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="Phil-Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
   <img align="center" alt="Phil-nodejs" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-  <img align="center" alt="Phil-nodejs" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original-wordmark.svg">
-  <img align="right" alt="Phil-pic" height="150" style="border-radius:50px;" src="https://media.discordapp.net/attachments/999613332837388358/1076975707827208323/Kirito_Kirigaara_long_haired_man_on_the_side_drawn_in_anime_wit_a101fa33-4bcb-48b2-bd7d-76780b91a305.png?width=671&height=671">
+  <img align="center" alt="Phil-Lua" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original-wordmark.svg">
+  <img align="right" alt="Phil-pic" height="150" style="border-radius:50px;" src="https://github.com/philipxlima.png">
 </div>
 
   ##
