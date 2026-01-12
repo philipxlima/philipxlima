@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Debug - List Files
+        run: ls -R
+
       - name: Generate Pacman
         run: |
           node generate_pacman.js ${{ github.repository_owner }}
