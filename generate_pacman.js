@@ -5,7 +5,7 @@ const boxSize = 10;
 const gap = 4;
 const cols = 53;
 const rows = 7;
-const speed = 200; // pixels per second (approx) - used to calculate duration
+const speed = 100; // pixels per second (approx) - used to calculate duration
 const stepDuration = 0.2; // seconds per step (movement between cells)
 const pauseAtEnd = 3; // seconds to wait before looping
 const colors = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39']; // GitHub palette (Light)
@@ -271,14 +271,11 @@ async function getContributions(username) {
     const width = cols * (boxSize + gap) + 20;
     const height = rows * (boxSize + gap) + 20;
 
+    // Extend duration slightly for the reset phase
+    const loopDuration = animDuration + 1.0;
+
     let svgContent = `
 <svg width="${width}" height="${height}" viewBox="-10 -10 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
-<style>
-    .cell { opacity: 1; }
-    @keyframes eat {
-        to { opacity: 0.2; fill: #1b2028; }
-    }
-</style>
 <rect x="-10" y="-10" width="${width}" height="${height}" fill="#0d1117" />
 <g transform="translate(0,0)">
 `;
@@ -288,29 +285,43 @@ async function getContributions(username) {
         for (let j = 0; j < rows; j++) {
             let cell = grid[i][j];
             let color = darkColors[cell.level];
-            // If active, add animation delay
-            let animStyle = "";
+
+            let animations = "";
             let timing = cellTimings[`${i}-${j}`];
+
             if (cell.active && timing !== undefined) {
-                // It gets eaten!
-                // We want it to stay visible until `timing`, then fade out quickly.
-                animStyle = `style="animation: eat 0.1s forwards; animation-delay: ${timing}s;"`;
+                // Calculate keyTimes for SMIL
+                // Sequence: 0 -> eatTime (visible) -> eatTime (disappear) -> end (reset)
+                // We use opacity: 1 -> 1 -> 0.2 -> 0.2 -> 1
+
+                let t = timing / loopDuration;
+                let tEat = Math.min(t + 0.01, 0.99); // small step to disappear
+                let tReset = 0.95; // start resetting near end
+
+                // Ensure times are strictly increasing and within 0-1
+                // 0 ... t ... tEat ... tReset ... 1
+
+                if (tEat >= tReset) tReset = tEat + 0.001;
+
+                // Opacity Animation
+                // values="1; 1; 0.2; 0.2; 1"
+                // keyTimes="0; t; tEat; tReset; 1"
+                animations += `<animate attributeName="opacity" values="1;1;0.2;0.2;1" keyTimes="0;${t.toFixed(3)};${tEat.toFixed(3)};${tReset};1" dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" />`;
+
+                // Fill Animation (Optional, matching original style)
+                animations += `<animate attributeName="fill" values="${color};${color};#1b2028;#1b2028;${color}" keyTimes="0;${t.toFixed(3)};${tEat.toFixed(3)};${tReset};1" dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" />`;
             }
 
-            svgContent += `<rect x="${cell.x}" y="${cell.y}" width="${boxSize}" height="${boxSize}" fill="${color}" rx="2" ${animStyle} />`;
+            svgContent += `<rect x="${cell.x}" y="${cell.y}" width="${boxSize}" height="${boxSize}" fill="${color}" rx="2">${animations}</rect>`;
         }
     }
 
     svgContent += `</g>`;
 
-    // Draw Path (Debug)
-    // svgContent += `<path d="${dPath}" stroke="red" fill="none" opacity="0.2" />`;
-
     // Draw Pacman
-    // We use a group wrapper for the motion
     svgContent += `
 <g>
-    <animateMotion dur="${animDuration}s" repeatCount="1" fill="freeze" path="${dPath}" rotate="auto">
+    <animateMotion dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" path="${dPath}" rotate="auto">
     </animateMotion>
     
     <g transform="rotate(0)"> <!-- Adjust initial rotation if needed -->
