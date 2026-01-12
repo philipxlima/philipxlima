@@ -5,7 +5,7 @@ const boxSize = 10;
 const gap = 4;
 const cols = 53;
 const rows = 7;
-const speed = 200; // pixels per second (approx) - used to calculate duration
+const speed = 100; // pixels per second (approx) - used to calculate duration
 const stepDuration = 0.2; // seconds per step (movement between cells)
 const pauseAtEnd = 3; // seconds to wait before looping
 const colors = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39']; // GitHub palette (Light)
@@ -186,7 +186,10 @@ async function getContributions(username) {
     });
 
     // Return to start (optional, lets reset) or just end there.
-    // If we want a loop, we might want to return off screen or fade out.
+    // Move off screen to the right
+    const exitX = width + 50;
+    dPath += ` L ${exitX} ${currentPixelY}`;
+    pathPoints.push({ x: exitX, y: currentPixelY });
 
     const totalAnimationDuration = pathPoints.length * stepDuration;
 
