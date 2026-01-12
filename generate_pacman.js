@@ -5,7 +5,7 @@ const boxSize = 10;
 const gap = 4;
 const cols = 53;
 const rows = 7;
-const speed = 100; // pixels per second (approx) - used to calculate duration
+const speed = 200; // pixels per second (approx) - used to calculate duration
 const stepDuration = 0.2; // seconds per step (movement between cells)
 const pauseAtEnd = 3; // seconds to wait before looping
 const colors = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39']; // GitHub palette (Light)
@@ -234,7 +234,7 @@ async function getContributions(username) {
         totalDistance += dist(pathPoints[i - 1], pathPoints[i]);
     }
 
-    const speedPxPerSec = 150;
+    const speedPxPerSec = 80;
     const animDuration = totalDistance / speedPxPerSec;
 
     // Now find when each target is hit
