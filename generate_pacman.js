@@ -308,10 +308,10 @@ async function getContributions(username) {
                 // Opacity Animation
                 // values="1; 1; 0.2; 0.2; 1"
                 // keyTimes="0; t; tEat; tReset; 1"
-                animations += `<animate attributeName="opacity" values="1;1;0.2;0.2;1" keyTimes="0;${t.toFixed(3)};${tEat.toFixed(3)};${tReset};1" dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" />`;
+                animations += `<animate attributeName="opacity" values="1;1;0.2;0.2;1" keyTimes="0;${t.toFixed(3)};${tEat.toFixed(3)};${tReset.toFixed(3)};1" dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" />`;
 
                 // Fill Animation (Optional, matching original style)
-                animations += `<animate attributeName="fill" values="${color};${color};#1b2028;#1b2028;${color}" keyTimes="0;${t.toFixed(3)};${tEat.toFixed(3)};${tReset};1" dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" />`;
+                animations += `<animate attributeName="fill" values="${color};${color};#1b2028;#1b2028;${color}" keyTimes="0;${t.toFixed(3)};${tEat.toFixed(3)};${tReset.toFixed(3)};1" dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" />`;
             }
 
             svgContent += `<rect x="${cell.x}" y="${cell.y}" width="${boxSize}" height="${boxSize}" fill="${color}" rx="2">${animations}</rect>`;
