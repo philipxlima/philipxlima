@@ -25,12 +25,15 @@ jobs:
       - name: Generate Pacman
         run: |
           node generate_pacman.js ${{ github.repository_owner }}
+          mkdir -p dist
+          mv pacman.svg dist/
+          touch dist/.nojekyll
 
       - name: Push to Output Branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
-          build_dir: .
+          build_dir: dist
           keep_history: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
