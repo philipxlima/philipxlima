@@ -310,7 +310,7 @@ async function getContributions(username) {
     <animateMotion dur="${animDuration}s" repeatCount="1" fill="freeze" path="${dPath}" rotate="auto">
     </animateMotion>
     
-    <g transform="rotate(0)"> <!- Adjust initial rotation if needed ->
+    <g transform="rotate(0)"> <!-- Adjust initial rotation if needed -->
         <circle cx="0" cy="0" r="4" fill="#FFD700" />
         <path d="M0,0 L5,-3 L5,3 Z" fill="#0d1117">
             <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="30 0 0" dur="0.2s" repeatCount="indefinite" values="0 0 0; 30 0 0; 0 0 0" keyTimes="0; 0.5; 1" />
