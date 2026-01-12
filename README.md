@@ -3,7 +3,7 @@
  
 | GitHub Stats | Top Languages |
 | :---: | :---: |
-|<a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=philipxlima&show_icons=true&include_all_commits=true&theme=chartreuse-dark&hide_border=true" alt="Anurag's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=philipxlima&layout=compact&theme=chartreuse-dark&hide_border=true" /></a> |
+| ![Stats](https://github-readme-stats.vercel.app/api?username=philipxlima&show_icons=true&include_all_commits=true&theme=chartreuse-dark&hide_border=true) | ![Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=philipxlima&layout=compact&theme=chartreuse-dark&hide_border=true) |
 
 
 
@@ -41,9 +41,5 @@
 #### Top Repositories
 
 
-<a href="https://github.com/philipxlima/Bateia">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=Bateia&theme=chartreuse-dark" />
-</a>
-<a href="https://github.com/philipxlima/ticket-bot">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=ticket-bot&theme=chartreuse-dark" />
-</a>
+[![Bateia](https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=Bateia&theme=chartreuse-dark)](https://github.com/philipxlima/Bateia)
+[![ticket-bot](https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=ticket-bot&theme=chartreuse-dark)](https://github.com/philipxlima/ticket-bot)
