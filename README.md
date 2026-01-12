@@ -33,7 +33,7 @@
  
 
  
-   ![Pacman](https://raw.githubusercontent.com/philipxlima/philipxlima/output/pacman.svg)
+   ![Pacman](https://philipxlima.github.io/philipxlima/pacman.svg)
  
 
  
@@ -45,3 +45,4 @@
 </a>
 <a href="https://github.com/philipxlima/ticket-bot">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=ticket-bot&theme=chartreuse-dark" />
+</a>
