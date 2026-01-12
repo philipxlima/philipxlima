@@ -31,8 +31,8 @@
 
 </div>
 
-```markdown
-   ![Pacman](https://raw.githubusercontent.com/philipxlima/philipxlima/output/pacman.svg)
+ ```markdown
+   ![Pacman](https://raw.githubusercontent.com/seu-usuario/seu-repo/main/pacman.svg)
    ```
 
 #### Top Repositories
