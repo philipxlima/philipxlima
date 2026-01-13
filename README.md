@@ -1,13 +1,6 @@
 ## Oiii eu sou o Philip Xavier de Lima <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="40">
 
  
-| GitHub Stats | Top Languages |
-| :---: | :---: |
-| ![Stats](https://github-readme-stats.vercel.app/api?username=philipxlima&show_icons=true&include_all_commits=true&theme=chartreuse-dark&hide_border=true) | ![Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=philipxlima&layout=compact&theme=chartreuse-dark&hide_border=true) |
-
-
-
-
 <div style="display: inline_block"><br>
   <img align="center" alt="Phil-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
   <img align="center" alt="Phil-Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
@@ -36,10 +29,3 @@
  
    ![Pacman](https://philipxlima.github.io/philipxlima/pacman.svg)
  
-
- 
-#### Top Repositories
-
-
-[![Bateia](https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=Bateia&theme=chartreuse-dark)](https://github.com/philipxlima/Bateia)
-[![ticket-bot](https://github-readme-stats.vercel.app/api/pin/?username=philipxlima&repo=ticket-bot&theme=chartreuse-dark)](https://github.com/philipxlima/ticket-bot)
