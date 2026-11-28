@@ -301,18 +301,27 @@ async function getContributions(username) {
     svgContent += `</g>`;
 
     // Draw Pacman
+    // A boca é um corte no próprio corpo: abre e fecha uma vez por quadradinho.
+    const radius = 6;
+    const biteDuration = ((boxSize + gap) / speedPxPerSec).toFixed(2);
+    const mouthFrame = angle => {
+        const rad = angle * Math.PI / 180;
+        const x = (radius * Math.cos(rad)).toFixed(3);
+        const y = (radius * Math.sin(rad)).toFixed(3);
+        return `M0 0L${x} ${y}A${radius} ${radius} 0 1 1 ${x} -${y}Z`;
+    };
+    // Nunca chega a 0 grau: com os dois pontos iguais o arco deixaria de existir.
+    const mouthValues = [1, 15, 30, 45, 30, 15, 1].map(mouthFrame).join(';');
+
     svgContent += `
 <g transform="translate(${boxSize / 2} ${boxSize / 2})">
 <g>
     <animateMotion dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" path="${dPath}" rotate="auto" calcMode="linear" keyPoints="0;1;1" keyTimes="0;${(animDuration / loopDuration).toFixed(4)};1">
     </animateMotion>
     
-    <g transform="rotate(0)"> <!-- Adjust initial rotation if needed -->
-        <circle cx="0" cy="0" r="4" fill="#FFD700" />
-        <path d="M0,0 L5,-3 L5,3 Z" fill="#0d1117">
-            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="30 0 0" dur="0.2s" repeatCount="indefinite" values="0 0 0; 30 0 0; 0 0 0" keyTimes="0; 0.5; 1" />
-        </path>
-    </g>
+    <path d="${mouthFrame(45)}" fill="#FFD700">
+        <animate attributeName="d" values="${mouthValues}" dur="${biteDuration}s" repeatCount="indefinite" />
+    </path>
 </g>
 </g>
 `;
