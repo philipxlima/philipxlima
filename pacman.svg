@@ -8,12 +8,9 @@
     <animateMotion dur="51.84s" repeatCount="indefinite" path="M 0 42 L 112 42 L 112 14 L 112 0 L 308 0 L 322 0 L 322 14 L 336 14 L 308 14 L 308 84 L 476 84 L 728 84 L 728 70 L 700 70 L 700 28 L 308 28 L 308 14 L 322 14 L 322 0 L 140 0 L 98 0 L 98 14 L 336 14 L 336 0 L 322 0 L 322 84 L 294 84 L 792 84" rotate="auto" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.9807;1">
     </animateMotion>
     
-    <g transform="rotate(0)"> <!-- Adjust initial rotation if needed -->
-        <circle cx="0" cy="0" r="4" fill="#FFD700" />
-        <path d="M0,0 L5,-3 L5,3 Z" fill="#0d1117">
-            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="30 0 0" dur="0.2s" repeatCount="indefinite" values="0 0 0; 30 0 0; 0 0 0" keyTimes="0; 0.5; 1" />
-        </path>
-    </g>
+    <path d="M0 0L4.243 4.243A6 6 0 1 1 4.243 -4.243Z" fill="#FFD700">
+        <animate attributeName="d" values="M0 0L5.999 0.105A6 6 0 1 1 5.999 -0.105Z;M0 0L5.796 1.553A6 6 0 1 1 5.796 -1.553Z;M0 0L5.196 3.000A6 6 0 1 1 5.196 -3.000Z;M0 0L4.243 4.243A6 6 0 1 1 4.243 -4.243Z;M0 0L5.196 3.000A6 6 0 1 1 5.196 -3.000Z;M0 0L5.796 1.553A6 6 0 1 1 5.796 -1.553Z;M0 0L5.999 0.105A6 6 0 1 1 5.999 -0.105Z" dur="0.28s" repeatCount="indefinite" />
+    </path>
 </g>
 </g>
 </svg>
