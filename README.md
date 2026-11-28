@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://philiplima.netlify.app/"><img src="./assets/header.svg" width="100%" alt="Philip Lima, desenvolvedor web e segurança física. São Paulo, Brasil."></a>
+  <a href="https://philiplima.netlify.app/"><img src="./assets/header.svg" width="100%" alt="Philip Lima, desenvolvedor web e segurança patrimonial. São Paulo, Brasil."></a>
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
 
 ## Oi, eu sou o Philip 👋
 
-De um lado, **segurança física** na Concentrix: controle de acesso, hardware e investigação de incidentes. Do outro, **desenvolvimento web**: player de música, bot para Discord e interfaces em React. Minha base em design vem da SAGA, e estudo Análise e Desenvolvimento de Sistemas na UNINOVE.
+De um lado, **segurança patrimonial** na Concentrix: controle de acesso, hardware e investigação de incidentes. Do outro, **desenvolvimento web**: player de música, bot para Discord e interfaces em React. Minha base em design vem da SAGA, e estudo Análise e Desenvolvimento de Sistemas na UNINOVE.
 
 ## 🚀 Projetos em destaque
 
@@ -58,7 +58,7 @@ Galeria dos personagens em HTML, CSS e JavaScript puro: ao escolher um tripulant
 | **Front-end** | JavaScript, TypeScript, React, HTML, CSS |
 | **Back-end** | Node.js, Express, MongoDB, Python, Lua |
 | **Design** | Photoshop, Illustrator, Premiere, After Effects, Maya |
-| **Segurança física** | Lenel OnGuard, Genetec, Invenzi, Control iD, HID |
+| **Segurança patrimonial** | Lenel OnGuard, Genetec, Invenzi, Control iD, HID |
 
 ## 👾 Minhas contribuições
 

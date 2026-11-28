@@ -12,14 +12,14 @@ const bars = Array.from({ length: 22 }, (_, i) => {
   return `<rect x="${i * 13}" y="${(120 - h) / 2}" width="6" height="${h}" rx="3" fill="#56d364" opacity=".25"><animate attributeName="opacity" values=".2;1;.2" dur="2.6s" begin="${(i * 0.09).toFixed(2)}s" repeatCount="indefinite"/></rect>`;
 }).join('');
 
-fs.writeFileSync(path.join(out, 'header.svg'), `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-label="Philip Lima, desenvolvedor web e segurança física">
+fs.writeFileSync(path.join(out, 'header.svg'), `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-label="Philip Lima, desenvolvedor web e segurança patrimonial">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1017"/><stop offset="1" stop-color="#10241f"/></linearGradient>
 </defs>
 <rect x=".5" y=".5" width="999" height="299" rx="18" fill="url(#bg)" stroke="#2ea043" stroke-opacity=".4"/>
 <text x="56" y="76" font-family="${MONO}" font-size="17" fill="#56d364">&gt; acesso liberado<tspan> _<animate attributeName="fill-opacity" values="1;0" calcMode="discrete" dur="1.1s" repeatCount="indefinite"/></tspan></text>
 <text x="52" y="152" font-family="${SANS}" font-size="76" font-weight="800" fill="#f0f6fc" letter-spacing="-2">Philip Lima</text>
-<text x="56" y="200" font-family="${SANS}" font-size="25" fill="#c9d1d9">Desenvolvedor web <tspan fill="#56d364">+</tspan> segurança física</text>
+<text x="56" y="200" font-family="${SANS}" font-size="25" fill="#c9d1d9">Desenvolvedor web <tspan fill="#56d364">+</tspan> segurança patrimonial</text>
 <text x="56" y="246" font-family="${MONO}" font-size="16" fill="#8b949e">São Paulo, Brasil</text>
 <g transform="translate(654 90)">${bars}</g>
 <rect x="640" y="84" width="312" height="2" fill="#f0f6fc" opacity=".7"><animate attributeName="y" values="84;214;84" dur="4s" repeatCount="indefinite"/></rect>
