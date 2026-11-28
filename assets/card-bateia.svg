@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="220" viewBox="0 0 480 220" role="img" aria-label="Bateia: Catálogo de filmes e séries organizado por gênero.">
+<rect x="1" y="1" width="478" height="218" rx="14" fill="#0d1117" stroke="#f85149" stroke-opacity=".55" stroke-width="2"/>
+<g transform="translate(366 30)"><rect x="0" y="8" width="78" height="54" rx="8" fill="none" stroke="#f85149" stroke-width="6"/><path d="M31 22v26l22-13z" fill="#f85149"><animate attributeName="opacity" values="1;.4;1" dur="2s" repeatCount="indefinite"/></path></g>
+<text x="30" y="70" font-family="'Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="38" font-weight="800" fill="#f0f6fc">Bateia</text>
+<text x="30" y="120" font-family="'Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="21" fill="#c9d1d9"><tspan x="30" dy="0">Catálogo de filmes e séries</tspan><tspan x="30" dy="29">organizado por gênero.</tspan></text>
+<text x="30" y="193" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,Menlo,monospace" font-size="16" fill="#f85149">React / Axios</text>
+</svg>

@@ -22,50 +22,30 @@ async function getContributions(username) {
         const response = await fetch(`https://github.com/users/${username}/contributions`);
         const text = await response.text();
 
-        // Parse the SVG/HTML response for data-level
-        // Structure: <rect ... data-level="X" ... >
-        // We expect plenty of rects. We need the LAST 53 columns * 7 rows = 371 rects ?
-        // Actually, the graph usually has 53 weeks.
+        // O GitHub envia uma tabela em que cada LINHA é um dia da semana.
+        // Por isso a posição vem de data-date, e não da ordem no HTML.
+        const days = [];
+        for (const [tag] of text.matchAll(/<td\b[^>]*>/g)) {
+            const date = tag.match(/data-date="([^"]+)"/);
+            const level = tag.match(/data-level="(\d+)"/);
+            if (date && level) days.push({ time: Date.parse(date[1]), level: Number(level[1]) });
+        }
 
-        const regex = /data-level="(\d+)"/g;
-        const matches = [...text.matchAll(regex)].map(m => parseInt(m[1]));
-
-        if (matches.length === 0) {
+        if (days.length === 0) {
             console.error("Could not find contribution data. Is the username correct?");
             return null;
         }
 
-        console.log(`Found ${matches.length} days of history.`);
+        console.log(`Found ${days.length} days of history.`);
 
-        // We need 53 columns x 7 rows = 371 cells.
-        // The matches are usually ordered by column then row (or row then column? No, usually column-major in SVG for weeks)
-        // GitHub's SVG structure: <g transform...> <rect ... y="0" /> <rect ... y="13" /> ... </g>
-        // It's grouped by week (columns).
-        // So matches should be: Week1Day0, Week1Day1... Week1Day6, Week2Day0...
-
-        // We take the LAST 53*7 entries if there are more (usually 365+ days).
-        // We reshape into 53 columns of 7 rows.
-
-        const totalNeeded = cols * rows;
-        // Pad if not enough (unlikely for active profiles, but possibly new ones)
-        let data = matches;
-        if (data.length < totalNeeded) {
-            const padding = new Array(totalNeeded - data.length).fill(0);
-            data = [...padding, ...data];
-        } else {
-            // Take the end
-            data = data.slice(-totalNeeded);
-        }
-
-        const newGrid = [];
-        let dataIdx = 0;
-        for (let i = 0; i < cols; i++) {
-            let col = [];
-            for (let j = 0; j < rows; j++) {
-                col.push(data[dataIdx] || 0);
-                dataIdx++;
-            }
-            newGrid.push(col);
+        const dayMs = 86400000;
+        const last = Math.max(...days.map(d => d.time));
+        const lastSunday = last - new Date(last).getUTCDay() * dayMs;
+        const firstSunday = lastSunday - (cols - 1) * 7 * dayMs;
+        const newGrid = Array.from({ length: cols }, () => new Array(rows).fill(0));
+        for (const { time, level } of days) {
+            const offset = Math.round((time - firstSunday) / dayMs);
+            if (offset >= 0 && offset < cols * rows) newGrid[Math.floor(offset / 7)][offset % 7] = level;
         }
         return newGrid;
 
@@ -278,7 +258,7 @@ async function getContributions(username) {
 
     let svgContent = `
 <svg width="${svgWidth}" height="${svgHeight}" viewBox="-10 -10 ${svgWidth} ${svgHeight}" xmlns="http://www.w3.org/2000/svg">
-<rect x="-10" y="-10" width="${width}" height="${height}" fill="#0d1117" />
+<rect x="-10" y="-10" width="${svgWidth}" height="${svgHeight}" rx="8" fill="#0d1117" />
 <g transform="translate(0,0)">
 `;
 
@@ -322,8 +302,9 @@ async function getContributions(username) {
 
     // Draw Pacman
     svgContent += `
+<g transform="translate(${boxSize / 2} ${boxSize / 2})">
 <g>
-    <animateMotion dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" path="${dPath}" rotate="auto">
+    <animateMotion dur="${loopDuration.toFixed(2)}s" repeatCount="indefinite" path="${dPath}" rotate="auto" calcMode="linear" keyPoints="0;1;1" keyTimes="0;${(animDuration / loopDuration).toFixed(4)};1">
     </animateMotion>
     
     <g transform="rotate(0)"> <!-- Adjust initial rotation if needed -->
@@ -332,6 +313,7 @@ async function getContributions(username) {
             <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="30 0 0" dur="0.2s" repeatCount="indefinite" values="0 0 0; 30 0 0; 0 0 0" keyTimes="0; 0.5; 1" />
         </path>
     </g>
+</g>
 </g>
 `;
 

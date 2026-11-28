@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="220" viewBox="0 0 480 220" role="img" aria-label="One Piece: Galeria interativa dos Piratas do Chapéu de Palha.">
+<rect x="1" y="1" width="478" height="218" rx="14" fill="#0d1117" stroke="#e3b341" stroke-opacity=".55" stroke-width="2"/>
+<g transform="translate(366 30)"><g transform="translate(40 35)"><g fill="none" stroke="#e3b341" stroke-width="5"><circle r="22"/><path d="M0-34V34M-34 0H34M-24-24 24 24M-24 24 24-24"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s" repeatCount="indefinite"/></g></g></g>
+<text x="30" y="70" font-family="'Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="38" font-weight="800" fill="#f0f6fc">One Piece</text>
+<text x="30" y="120" font-family="'Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="21" fill="#c9d1d9"><tspan x="30" dy="0">Galeria interativa dos Piratas</tspan><tspan x="30" dy="29">do Chapéu de Palha.</tspan></text>
+<text x="30" y="193" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,Menlo,monospace" font-size="16" fill="#e3b341">HTML / CSS / JavaScript</text>
+</svg>
